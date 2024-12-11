@@ -75,3 +75,14 @@ func (w *Wellhub) GetIndividuals(key string) (*entity.Individuals, error) {
 	individuals.FromJSON([]byte(resp.GetRaw()))
 	return individuals, nil
 }
+
+func (w *Wellhub) AddIndividualWithVerification(individual *entity.Individual) error {
+	search, err := w.GetIndividuals(individual.KeyId())
+	if err != nil {
+		return err
+	}
+	if len(search.List()) > 0 {
+		return nil
+	}
+	return w.AddIndividual(individual)
+}

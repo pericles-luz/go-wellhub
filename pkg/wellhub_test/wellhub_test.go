@@ -15,6 +15,14 @@ func TestWellhubMustAddIndividual(t *testing.T) {
 	require.NoError(t, wellhub.AddIndividual(individual))
 }
 
+func TestWellhubMustAddIndividualWithVerification(t *testing.T) {
+	t.Skip("use only if you need it")
+	wellhub := wellhub.NewWellhub("../../config/gympass.sandbox.json")
+	individual := NewIndividual()
+	require.NoError(t, wellhub.AddIndividualWithVerification(individual))
+	require.NoError(t, wellhub.AddIndividualWithVerification(individual))
+}
+
 func TestWellhubMustDeleteIndividual(t *testing.T) {
 	t.Skip("use only if you need it")
 	wellhub := wellhub.NewWellhub("../../config/gympass.sandbox.json")
