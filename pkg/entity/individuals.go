@@ -1,6 +1,8 @@
 package entity
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 type Individuals struct {
 	Individuals []*Individual `json:"items"`

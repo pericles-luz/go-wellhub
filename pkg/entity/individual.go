@@ -17,12 +17,13 @@ var (
 )
 
 type Individual struct {
-	identifiers     uint8
-	Email           string `json:"email"`
-	NationalID      string `json:"national_id"`
-	FullName        string `json:"full_name"`
-	EmployeeID      string `json:"employee_id"`
-	AdditionalField struct {
+	identifiers      uint8
+	Email            string `json:"email"`
+	NationalID       string `json:"national_id"`
+	FullName         string `json:"full_name"`
+	EmployeeID       string `json:"employee_id"`
+	InvitationStatus string `json:"invitation_status"`
+	AdditionalField  struct {
 		Department    string `json:"department"`
 		CostCenter    string `json:"cost_center"`
 		OfficeZipCode string `json:"office_zip_code"`
